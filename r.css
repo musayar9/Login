@@ -1,0 +1,213 @@
+
+*{box-sizing: border-box;}
+
+body{
+    --color-primary: #007bff;
+    --color-dark:#007f67;
+     --color-secondary:#252c6a;
+     --color-error:#cc3333;
+     --color-success:#4bb544;
+     --border-radius:12px;
+     
+     
+
+     margin: 0;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 18px;
+}
+
+
+.container{
+    width: 500px;
+    max-width: 500px;
+    margin: 16px;
+    padding: 32px;
+    border: 1px solid rgb(221, 219, 219);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    3px 6px rgba(0, 0, 0, 0.30);
+    
+    border-radius: var(--border-radius);
+    /* background-color: #f2f2f2; */
+    /* background: linear-gradient(45deg, red, blue, orange); */
+}
+
+.container input:focus{
+    border: 1px solid rgb(181, 181, 181);
+    box-shadow: 10px 10px 5px #aaaaaa;
+    cursor: pointer;
+}
+
+/* .container:hover{
+    border: 1px solid rgb(181, 181, 181);
+    box-shadow: 10px 10px 5px #aaaaaa;
+    cursor: pointer;
+} */
+.container,.f-input,.f-button{
+    font: 500 16px 'Quicksand',sans-serif;
+}
+
+.f-none{
+    display: none;
+} 
+
+
+.form>*:first-child{margin-top:0 ;}
+.form>*:last-child{margin-bottom: 0;}
+
+
+.f-title{
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.f-message{
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.f-message-success{
+    color: var(--color-success);
+}
+.f-message-error{
+    color: var(--color-error);
+
+}
+
+
+.f-input-group{
+    margin-bottom: 24px;
+    position: relative;
+
+}
+
+.f-input-group input[type=text], input[type=password],input[type=email]{
+    padding-left: 40px;
+}
+
+/* .f-input-group input[type=text]:focus + .icon{
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: #ffffff;
+    color: var(--color-primary);
+} */
+
+
+.f-input{
+    /* text-align: center; */
+    display: block;
+    width: 100%;
+
+    padding:12px;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    background: #e2e9e2;
+    transition: background 0.3s, border-color 0.3s;
+
+}
+
+
+
+
+
+.f-input:focus{
+   outline: none;
+    border-color: var(--color-primary);
+    background-color: #ffffff;
+}
+
+
+.f-input-error{
+    color: var(--color-error);
+    border-color:var(--color-error) ;
+   
+}
+
+#f-input-error-message{
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--color-error);
+}
+
+.f-button{
+    width: 100%;
+    padding: 16px 32px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    box-shadow: 4px 6px lightgray;
+    margin-bottom: 16px;
+    transition: background-color 0.4s linear;
+
+}
+
+.f-button:hover{
+    background: var(--color-dark);
+    border: var(--color-dark);
+
+}
+
+.f-button:active{
+    transform: translateY(6px);
+}
+
+.f-text{
+    text-align: center;
+
+}
+
+.f-link{
+    color: var(--color-secondary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.f-link:hover{
+    text-decoration: underline;
+
+}
+
+
+
+/* i{position: absolute;} */
+
+
+.icon{
+    position: absolute;
+    margin-top:6px;
+    padding: 12px;
+    min-width: 20px;
+    color: #858b85 ;
+}
+
+
+#signPassword, #confirmPassword{
+    padding-right: 65px;
+}
+
+.geye{
+
+    position: absolute;
+    margin-top:6px;
+    padding: 12px;
+    min-width: 20px;
+    color: #858b85 ;
+    display: flex;
+    float:right;
+    margin-left: 380px;
+    cursor: pointer;
+
+}
+
+.hide1, .hide3{
+    display: none;
+}

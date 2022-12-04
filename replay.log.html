@@ -16,17 +16,18 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
   <link rel="stylesheet" href="r.css">
+  <link rel="icon" href="ımg/favicon.ico" type="image/x-icon">
   <title>My Login</title>
 </head>
 
 <body>
 
   <div class="container">
-    <form class="form" id="loginArea">
+    <form class="form  " id="loginArea">
       <h1 class="f-title">Giriş</h1>
-      <div class="f-message f-message-error"></div>
+      <div class="f-message f-message-error form-message"></div>
 
-      <div class="mb-3 f-input-group  ">
+      <div class="mb-3 f-input-group">
 
 
         <i class="fa-solid fa-user icon fa-lg fa-fw" aria-hidden="true"></i>
@@ -50,7 +51,7 @@
 
 
 
-    <form class=" form f-none" id="accountArea">
+    <form class=" form f-none animation" id="accountArea">
       <h1 class="f-title">Hesap Oluştur</h1>
       <div class="f-message f-message-error"></div>
 
@@ -58,7 +59,7 @@
 
         <i class="fa-solid fa-text-slash icon fw-fa fa-lg"></i>
 
-        <input type="text" class="f-input" id="firstName" autofocus placeholder="FirstName">
+        <input type="text" class="f-input" id="firstName" autofocus placeholder="Name and Surname">
         <div id="f-input-error-message"></div>
       </div>
 
@@ -124,18 +125,19 @@
         <h6 class="text-muted">Cinsiyet Seçiniz:</h6>
         <div class="col input-group f-input-group">
           <div class="form-check form-switch d-inline">
-            <input class="form-check-input" type="checkbox" role="switch" id="man">
+            <input class="form-check-input" type="checkbox" role="switch" id="man" >
             <label class="form-check-label" for="man">Erkek</label>
           </div>
         </div>
         <div class="col input-group f-input-group">
           <div class="form-check form-switch d-inline">
-            <input class="form-check-input" type="checkbox" role="switch" id="woman" checked>
+            <input class="form-check-input" type="checkbox" role="switch" id="woman" >
             <label class="form-check-label" for="woman">Kadın</label>
+
           </div>
         </div>
 
-       
+       <div id="f-input-error-message"></div>
 
 
 

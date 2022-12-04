@@ -40,11 +40,7 @@ body{
     cursor: pointer;
 }
 
-/* .container:hover{
-    border: 1px solid rgb(181, 181, 181);
-    box-shadow: 10px 10px 5px #aaaaaa;
-    cursor: pointer;
-} */
+
 .container,.f-input,.f-button{
     font: 500 16px 'Quicksand',sans-serif;
 }
@@ -87,12 +83,7 @@ body{
     padding-left: 40px;
 }
 
-/* .f-input-group input[type=text]:focus + .icon{
-    outline: none;
-    border-color: var(--color-primary);
-    background-color: #ffffff;
-    color: var(--color-primary);
-} */
+
 
 
 .f-input{
@@ -210,4 +201,27 @@ body{
 
 .hide1, .hide3{
     display: none;
+}
+
+.animation{
+    animation: animatezoom 0.5s;
+    
+}
+
+
+@keyframes animatezoom{
+    from{transform: scale(0)}
+    to{transform: scale(1);}
+}
+
+
+.animationLog{
+    animation:turnanimation 0.9s;
+   
+ 
+}
+
+@keyframes turnanimation{
+    from{transform:scale(0) rotate(360deg)}
+    to{transform:scale(1) rotate(0) }
 }

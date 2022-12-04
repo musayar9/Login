@@ -6,26 +6,42 @@ function UI(){
    this.forgetPassword = document.querySelector("#forgetPassword"),
    this.confirm= document.querySelector("#confirm"),
    this.loginEnter= document.querySelector("#loginEnter")
-    //    this.password= document.querySelector("#signPassword")
-    //    this.toggle= document.querySelector("#toggle")
-//    this.confirmPassword = document.querySelector("#confirmPassword").value.length
-  
+
+  this.password1= document.querySelector("#password1")
    this.showError = document.querySelector(".f-input")
    this.login1=document.querySelector("#login1")
 }
  
 
 UI.prototype.setMessage = function(formElement, type, message){
-    const messageElement= formElement.querySelector(".f-message");
     
+        const messageElement = formElement.querySelector(".f-message")
+        messageElement.textContent = message;
+        messageElement.classList.remove("f-message-success", "f-message-error");
+        messageElement.classList.add(`f-message-${type}`)
 
-    messageElement.textContent= message;
-    messageElement.classList.remove("f-message-success", "f-message-error");
-    messageElement.classList.add(`f-message-${type}`)
+
+       
+// setTimeout(()=>{
+//     document.querySelector("#f-input-error-message").remove()
+// },3000)
 
 }
 
 
+
+
+
+
+
+
+UI.prototype.clearInput = function (){
+    this.login1.value = "";
+    this.password1.value = "";
+
+    
+
+}
 
 UI.prototype.showInputError=function(showElement,message) {
     showElement.classList.add("f-input-error");
@@ -47,6 +63,8 @@ const ui = new UI()
         ui.createAcunt.addEventListener("click", e =>{
             e.preventDefault()
             loginForm.classList.add("f-none");
+            
+            ui.clearInput()
             createNewAccount.classList.remove("f-none")
         });
 
@@ -54,35 +72,65 @@ const ui = new UI()
         ui.loginEnter.addEventListener('click', e =>{
             e.preventDefault();
             loginForm.classList.remove("f-none");
+            loginForm.classList.add("animationLog")
             createNewAccount.classList.add("f-none")
         })
 
-
+    
         loginForm.addEventListener("submit", e =>{
-            e.preventDefault();
+           e.preventDefault();
+           
+        
+            if(this.login1.value==="" & this.password1.value ===""){
 
-            ui.setMessage(loginForm,"error", "geçersiz şifre/ kullanıcı adı")
+               
+                    ui.setMessage(loginForm,"error", "Kullanıcı Adı ve Parolanızı Girmediniz")
+               
+                
+                 
+                 
+               
+            }else{
+                 ui.setMessage(loginForm,"success"," Hoşgeldiniz")
+                 ui.clearInput()
+            }
+          
+           
         })
-     
+
+
+
+    
 
 
 
     document.querySelectorAll(".f-input").forEach(showElement=>{
         showElement.addEventListener("blur", e=>{
+        
           
 
             var regex = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+.)+([.])+[a-zA-Z0-9.-]{2,4}$/;
+          
                 if(e.target.id==="login1"  && regex.test(e.target.value)==false){
+                    
                     ui.showInputError(showElement,"Yanlış e-mail adresi girdniz")
+               
+                        
+                   
                 }
-
+             
+         
+          
                 if(e.target.id==="login1" && e.target.value === ""){
-                    ui.showInputError(showElement,"e-mail adresi girmediniz")
+                 
+                        ui.showInputError(showElement,"E-mail adresi girmediniz")
+                 
+                        
+                        
+                    
                 }
-                
-                // if(e.target.id==="login1" && e.target.value.length > 0 && e.target.value.length<4){
-                //     ui.showInputError(showElement,"kullanıcı adresi en 5 larakterli olmalı")
-                // }
+       
+              
 
             if(e.target.id==="password1" && e.target.value.length<7 && e.target.value.length<12){
                 ui.showInputError(showElement,"Yanlış şifre girdiniz")
@@ -94,7 +142,7 @@ const ui = new UI()
             /*create account area */ 
 
 
-            if(e.target.id==="firstName"  && e.target.value.length < 2){
+            if(e.target.id==="firstName"  && e.target.value.length < 3){
                 ui.showInputError(showElement,"Kullaıcı adı uzunluğu en az 3karakter olmalı")
             }
             
@@ -121,14 +169,31 @@ const ui = new UI()
         
 
             if(e.target.id==="confirmPassword" && password !== confirmPassword ){
-                ui.showInputError(showElement,"Paralolar benzer değil")
+                ui.showInputError(showElement,"Parololar benzer değil")
             }
 
             if(e.target.id==="agee" && e.target.value<18){
                 ui.showInputError(showElement,"18 yaşından küçüksünüz")
             }
 
-          
+        //   if(e.target.id === "man"  && e.target.click()){
+            
+        //   }
+
+          document.querySelector("#man").addEventListener("click",()=>{
+            document.querySelector("#woman").disabled = true
+                
+  
+           
+            
+          document.querySelector("#man").checked = true
+            
+          })
+          document.querySelector("#woman").addEventListener("click",()=>{
+            document.querySelector("#man").disabled = true
+            
+            document.querySelector("#woman").checked = true
+          })
 
         })
         showElement.addEventListener("input", e => {
@@ -145,6 +210,8 @@ const ui = new UI()
         
   
      })
+
+  
 
    
 

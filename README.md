@@ -4,7 +4,7 @@
 
 Bu uygulamada çoğu şirketlerin, sosyal medyaların veya tüzel kişilerin kendi sayfalarını oluştururken kullanıcıların sayfaya katılması ve kullanıcı bilgisi tutmak için kullandıkları login alanını tasarlıyorruz. Bu uygulamada 2 farklı login tasarladık bir tanesi bir siteye ilk girerken kullandığımız hesap oluşturma logini diğeri ise kayıt olduktan sonra sadece mail ve şifremizle oturum actığımız login(giriş) alanı. Giriş alanımızı ve hesap oluşturma alanlarını  container içinde ve 2 farklı form classı altında oluşturduk. Aşağıdaki ilk resimde hesap oluştur logini yer almaktadır. Burada kullanıcı sayfaya kayıt olurken kullanıcıdan istenilen bilgiler yer almaktadır.
 
-![img-1](images\1.jpg)
+![img-1](images/1.jpg)
 
 
 

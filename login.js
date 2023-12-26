@@ -138,22 +138,9 @@ const ui = new UI()
         showElement.addEventListener("input", e => {
             ui.deleteInputError(showElement);
 
-
+               })
         })
-    })
-   
-
-  
-
-   
-        
-  
      })
-
-  
-
-   
-
 
 function showPassword(){
     const password = document.querySelector("#signPassword")
